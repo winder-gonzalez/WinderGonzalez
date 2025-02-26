@@ -10,7 +10,7 @@ public class Main {
 
         Random aleatorio = new Random();
 
-        int lanzada = aleatorio.nextInt((max - min +1)+min);
+        int lanzada = aleatorio.nextInt((max - min +1))+min;
         System.out.println("Se realizaron " + lanzada +" lanzadas de dados");
         //tiradas de dados
         System.out.println("D1 || D2");
@@ -21,8 +21,8 @@ public class Main {
         int sumad2=0;
 
         for(int i=0;i<=lanzada;i++){
-            int tirada1 = aleatorio.nextInt((maxD - minD +1)+minD);
-            int tirada2 = aleatorio.nextInt((maxD - minD +1)+minD);
+            int tirada1 = aleatorio.nextInt((maxD - minD +1))+minD;
+            int tirada2 = aleatorio.nextInt((maxD - minD +1))+minD;
 
             sumad1+=tirada1;
             sumad2+=tirada2;
