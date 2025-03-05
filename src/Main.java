@@ -19,7 +19,7 @@ public class Main {
             System.out.println("");
             System.out.println("Introduce el signo aritmético (+, -, *, /, ^, %): ");
             String signo = teclado.next();
-            double resultado = (double)0.0F;
+            double resultado = 0;
             System.out.println("#  #  #  #  #  # RESULTADOS #  #  #  #  #  # ");
             switch (signo) {
                 case "+":
