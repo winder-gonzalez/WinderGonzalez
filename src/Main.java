@@ -20,6 +20,7 @@ public class Main {
         mascota3.setNombre("Spike");
         mascota3.setRaza("Sirio");
         mascota3.setTipo("Hamster");
+
         System.out.println("-----------------------------------------------");
         System.out.println(mascota1.getTipo()+" "+mascota1.getNombre());
         System.out.println("Raza : "+mascota1.getRaza());
