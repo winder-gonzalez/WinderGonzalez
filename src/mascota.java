@@ -1,89 +1,43 @@
-public class mascota {
+public  class mascota extends Animal {
 
-    private String color;
-    private String nombre;
-    private String edad;
-    private String raza;
-    private String tipo;
-    private String nPatas;
-    private String alimentacion;
-    private String cubiertaCorporal;
-    public mascota(){
-
-    }
-    public mascota(String color, String nombre, String edad, String raza, String tipo, String nPatas, String alimentacion, String cubiertaCorporal) {
-        this.color = color;
-        this.nombre = nombre;
-        this.edad = edad;
-        this.raza = raza;
-        this.tipo = tipo;
-        this.nPatas = nPatas;
-        this.alimentacion = alimentacion;
-        this.cubiertaCorporal = cubiertaCorporal;
+    public mascota(String color, String nombre, int edad, String raza, String tipo, int nPatas, Alimentacion alimentacion, String cubiertaCorporal, String habilidad) {
+        super(color, nombre, edad, raza, tipo, nPatas, alimentacion, cubiertaCorporal, habilidad);
+        setComida(ejemploAlimentacion(alimentacion));
     }
 
+    @Override
+    public String ejemploAlimentacion(Alimentacion tipo) {
+        String ejemplo;
+        if(tipo.equals(Alimentacion.Carnivoro)){
+            ejemplo="Carne,Huesos y Pescado";
+            return ejemplo;
+        } if(tipo.equals(Alimentacion.Herviboro)){
+            ejemplo="Flores,Frutas y Hojas";
+            return ejemplo;
+        } if(tipo.equals(Alimentacion.Omnivoro)){
+            ejemplo="Carne,Pescado,Frutas y Hojas";
+            return ejemplo;
+        }else{
+            ejemplo="pailassss";
+            return ejemplo;
+        }
 
-    public String getColor() {
-        return color;
     }
 
-    public String getEdad() {
-        return edad;
-    }
-
-    public void setEdad(String edad) {
-        this.edad = edad;
-    }
-
-    public String getnPatas() {
-        return nPatas;
-    }
-
-    public void setnPatas(String nPatas) {
-        this.nPatas = nPatas;
-    }
-
-    public String getAlimentacion() {
-        return alimentacion;
-    }
-
-    public void setAlimentacion(String alimentacion) {
-        this.alimentacion = alimentacion;
-    }
-
-    public String getCubiertaCorporal() {
-        return cubiertaCorporal;
-    }
-
-    public void setCubiertaCorporal(String cubiertaCorporal) {
-        this.cubiertaCorporal = cubiertaCorporal;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getRaza() {
-        return raza;
-    }
-
-    public void setRaza(String raza) {
-        this.raza = raza;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    @Override
+    public String toString() {
+        return  "--------------------------------------------------"+'\n'+
+                "   Nombre= " + nombre + '\n' +
+                "   Color= " + color + '\n' +
+                "   Edad= " + edad +" años"+ '\n' +
+                "   Raza= " + raza + '\n' +
+                "   Tipo de Mascota= " + tipo + '\n' +
+                "   Numero de Patas= " + nPatas +'\n'+
+                "   Alimentacion= " + alimentacion + '\n' +
+                "   Comida= " + comida + '\n' +
+                "   Cubierta Corporal= " + cubiertaCorporal + '\n' +
+                "   Habilidad= " + habilidad + '\n'+
+                "--------------------------------------------------"
+                ;
     }
 }
