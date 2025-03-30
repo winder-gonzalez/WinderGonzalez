@@ -3,14 +3,14 @@ public abstract class Animal {
     protected String nombre;
     protected int edad;
     protected String raza;
-    protected String tipo;
+    protected AnimalesZ tipo;
     protected int nPatas;
     protected Alimentacion alimentacion;
-    protected String cubiertaCorporal;
+    protected CubiertaCorporal cubiertaCorporal;
     protected String habilidad;
     protected String comida;
 
-    public Animal(String color, String nombre, int edad, String raza, String tipo, int nPatas, Alimentacion alimentacion, String cubiertaCorporal, String habilidad) {
+    public Animal(String color, String nombre, int edad, String raza, AnimalesZ tipo, int nPatas, Alimentacion alimentacion, CubiertaCorporal cubiertaCorporal, String habilidad) {
         this.color = color;
         this.nombre = nombre;
         this.edad = edad;
@@ -21,11 +21,15 @@ public abstract class Animal {
         this.cubiertaCorporal = cubiertaCorporal;
         this.habilidad = habilidad;
     }
-
+    enum AnimalesZ{
+       Perro,Gallina,Oveja, Serpiente,Capibara,Mapache
+    }
     enum Alimentacion{
         Herviboro,Carnivoro,Omnivoro;
     }
-
+    enum CubiertaCorporal{
+        Pelaje,Plumas,Lana,Escamas
+    }
 
     public abstract String ejemploAlimentacion(Alimentacion tipo);
 
@@ -61,11 +65,11 @@ public abstract class Animal {
         this.raza = raza;
     }
 
-    public String getTipo() {
+    public AnimalesZ getTipo() {
         return tipo;
     }
 
-    public void setTipo(String tipo) {
+    public void setTipo(AnimalesZ tipo) {
         this.tipo = tipo;
     }
 
@@ -78,11 +82,11 @@ public abstract class Animal {
     }
 
 
-    public String getCubiertaCorporal() {
+    public CubiertaCorporal getCubiertaCorporal() {
         return cubiertaCorporal;
     }
 
-    public void setCubiertaCorporal(String cubiertaCorporal) {
+    public void setCubiertaCorporal(CubiertaCorporal cubiertaCorporal) {
         this.cubiertaCorporal = cubiertaCorporal;
     }
 

@@ -1,8 +1,28 @@
-public  class mascota extends Animal {
+public class Exoticos extends Animal implements Habitat{
 
-    public mascota(String color, String nombre, int edad, String raza, AnimalesZ tipo, int nPatas, Alimentacion alimentacion, CubiertaCorporal cubiertaCorporal, String habilidad) {
+    protected String habitat;
+    public Exoticos(String color, String nombre, int edad, String raza, AnimalesZ tipo, int nPatas, Alimentacion alimentacion, CubiertaCorporal cubiertaCorporal, String habilidad) {
         super(color, nombre, edad, raza, tipo, nPatas, alimentacion, cubiertaCorporal, habilidad);
         setComida(ejemploAlimentacion(alimentacion));
+        habitat=habitat(tipo);
+    }
+
+    @Override
+    public String habitat(AnimalesZ animal) {
+        String habitat ;
+        if(animal.equals(AnimalesZ.Serpiente)){
+            habitat="Selvas,Desiertos y Bosques";
+            return habitat;
+        } if(animal.equals(AnimalesZ.Capibara)){
+            habitat="Humedales,Pantanos y Lagos";
+            return habitat;
+        }if(animal.equals(AnimalesZ.Mapache)){
+            habitat="Bosques ,Humedales y Praderas";
+            return habitat;
+        }else {
+            return "0";
+        }
+
     }
 
     @Override
@@ -21,7 +41,6 @@ public  class mascota extends Animal {
             ejemplo="pailassss";
             return ejemplo;
         }
-
     }
 
     @Override
@@ -35,9 +54,18 @@ public  class mascota extends Animal {
                 "   Numero de Patas= " + nPatas +'\n'+
                 "   Alimentacion= " + alimentacion + '\n' +
                 "   Comida= " + comida + '\n' +
+                "   Habitat= " + habitat + '\n' +
                 "   Cubierta Corporal= " + cubiertaCorporal + '\n' +
                 "   Habilidad= " + habilidad + '\n'+
                 "@  @  @  @  @  @  @  @  @  @  @  @  @  @ "
                 ;
+    }
+
+    public String getHabitat() {
+        return habitat;
+    }
+
+    public void setHabitat(String habitat) {
+        this.habitat = habitat;
     }
 }
